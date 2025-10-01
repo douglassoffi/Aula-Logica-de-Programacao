@@ -114,13 +114,14 @@
 
 // // Chalanges
 
-let secretNumber = parseInt(Math.random() * 100 + 1);
+let max = parseInt(prompt('What is the max number'));
+let secretNumber = parseInt(Math.random() * max + 1);
 console.log(secretNumber);
 let chosenNumber;
 let attempts = 1;
 
 while (chosenNumber != secretNumber) {
-    chosenNumber = prompt('Pick a number between 1 and 100');
+    chosenNumber = prompt(`Pick a number between 1 and ${max}`);
     
     if (secretNumber == chosenNumber) {
         break;        
