@@ -67,27 +67,72 @@
 //     alert(letsGo);
 //     letsGo++;
 // }
+
+// // 4
+// console.log('Welcome');
+// let name1 = 'Jaime';
+// console.log(name1);
+// alert(`Hello, ${name1}`);
+// let language = prompt('What is your favorite programing language?');
+// console.log(language);
+// let value1 = parseInt(prompt('Pick a number'));
+// let value2 = parseInt(prompt('Pick a number'));
+// let sum = value1 + value2;
+// console.log(`The sum of the 2 values is ${sum}`);
+// let value3 = parseInt(prompt('Pick a number'));
+// let value4 = parseInt(prompt('Pick a number'));
+// let sub = value3 - value4;
+// console.log(`The sub of the 2 values is ${sub}`);
+// let age = prompt('What is yout age?');
+// if (age >= 18) {
+//     console.log('18+');
+// } else {
+//     console.log('17-');
+// }
+// let number5 = parseInt(prompt('Pick a number'));
+// if (number5 > 0) {
+//     alert('Positive');
+// } else if (number5 < 0) {
+//     alert('Negative');
+// } else {
+//     alert('Zero');
+// }
+// let number6 = 1;
+// while ( number6 <= 10) {
+//     console.log(number6);
+//     number6++;
+// }
+// let score = prompt('What is the score');
+// if (score >= 7) {
+//     console.log('Approved');
+// } else {
+//     console.log('Not approved');
+// }
+// console.log(parseInt(Math.random() + 1));
+// console.log(parseInt(Math.random() * 10 + 1));
+// console.log(parseInt(Math.random() * 1000 + 1));
+
 // // Chalanges
 
-let secretNumber = 30;
+let secretNumber = parseInt(Math.random() * 100 + 1);
 console.log(secretNumber);
 let chosenNumber;
-let life = 3;
+let attempts = 1;
 
-while (chosenNumber != secretNumber && life > 0) {
-    chosenNumber = prompt('Pick a number');
+while (chosenNumber != secretNumber) {
+    chosenNumber = prompt('Pick a number between 1 and 100');
     
     if (secretNumber == chosenNumber) {
-        alert(`You are right. ${secretNumber}`);
-        
+        break;        
     } 
     else if (secretNumber > chosenNumber) {
-        life--;
-        alert(`Secret number is greater than ${chosenNumber} - ${life} life/s`);
+        alert(`Secret number is greater than ${chosenNumber}`);
         
     } else {
-        life--;
-        alert(`Secret number is less than ${chosenNumber} - ${life} life/s`);
+        alert(`Secret number is less than ${chosenNumber}`);
     }
-    console.log(life);
+    attempts++;
 }
+
+let word = attempts > 1 ? 'attempts' : 'attempt';
+alert(`You are right ${secretNumber} - ${attempts} ${word}`);
